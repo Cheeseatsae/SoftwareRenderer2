@@ -6,6 +6,7 @@ public class Mesh
 {
 
     public Vector3 position;
+    public Vector3 rotation;
     private Vertex[] originalVertices;
     public Vertex[] vertices;
     public Vector3 scale;
@@ -37,6 +38,23 @@ public class Mesh
         
         // assigning vertices 
         vertices = originalVertices;
+    }
+
+    public void UpdateRotation(float x, float y, float z)
+    {
+        rotation.x = x;
+        rotation.y = y;
+        rotation.z = z;
+
+        // ROTATE ALONG Z AXIS
+        for (int i = 0; i < originalVertices.Length - 1; i++)
+        {
+            float newX = (Mathf.Cos(rotation.z) * originalVertices[i].position.x) + (-Mathf.Sin(rotation.z) * originalVertices[i].position.y);
+            float newY = (Mathf.Sin(rotation.z) * originalVertices[i].position.x) + (Mathf.Cos(rotation.z) * originalVertices[i].position.y);
+            
+            vertices[i].position.x = newX;
+            vertices[i].position.y = newY;
+        }
     }
     
     public void UpdatePosition(float x, float y, float z)

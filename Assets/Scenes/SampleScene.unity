@@ -219,8 +219,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6912bcac8fc67bd43af5895619012ccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xSize: 800
-  ySize: 800
+  xSize: 200
+  ySize: 200
   quadRenderer: {fileID: 82002716}
   backBuffer: 
   fov: 0.001
@@ -238,9 +238,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mesh:
     position: {x: 0, y: 0, z: 0}
+    rotation: {x: 0, y: 0, z: 0}
     vertices: []
-    scale: {x: 2, y: 2, z: 2}
+    scale: {x: 0.5, y: 0.5, z: 0.5}
   zSpeed: 0
+  rSpeed: 0.01
 --- !u!114 &82002721
 MonoBehaviour:
   m_ObjectHideFlags: 0
