@@ -47,7 +47,7 @@ public class Mesh
         rotation.z = z;
 
         // ROTATE ALONG Z AXIS
-        for (int i = 0; i < originalVertices.Length - 1; i++)
+        for (int i = 0; i < originalVertices.Length; i++)
         {
             float newX = (Mathf.Cos(rotation.z) * originalVertices[i].position.x) + (-Mathf.Sin(rotation.z) * originalVertices[i].position.y);
             float newY = (Mathf.Sin(rotation.z) * originalVertices[i].position.x) + (Mathf.Cos(rotation.z) * originalVertices[i].position.y);
